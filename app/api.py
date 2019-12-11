@@ -13,7 +13,7 @@ def start_response(color):
         status=200,
         headers={"Content-Type": "application/json"},
         body=json.dumps(
-            {"color": color, "headType": "bonhomme", "tailType": "bonhomme"}
+            {"color": color, "headType": "earmuffs", "tailType": "ice-skate"}
         ),
     )
 
