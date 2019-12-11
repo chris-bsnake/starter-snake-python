@@ -12,9 +12,7 @@ def start_response(color):
     return HTTPResponse(
         status=200,
         headers={"Content-Type": "application/json"},
-        body=json.dumps(
-            {"color": color, "headType": "snowman", "tailType": "bonhomme"}
-        ),
+        body=json.dumps({"color": color, "headType": "rudolph", "tailType": "present"}),
     )
 
 
