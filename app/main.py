@@ -42,7 +42,8 @@ def start():
     """
     print(json.dumps(data))
 
-    color = "#00FF00"
+    r = lambda: random.randint(0, 255)
+    color = "#%02X%02X%02X" % (r(), r(), r())
 
     return start_response(color)
 
@@ -58,6 +59,7 @@ def move():
     print(json.dumps(data))
 
     directions = ["up", "down", "left", "right"]
+
     direction = random.choice(directions)
 
     return move_response(direction)

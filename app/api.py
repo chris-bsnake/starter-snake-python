@@ -1,5 +1,47 @@
 import json
+import random
 from bottle import HTTPResponse
+
+snake_butts = [
+    "regular",
+    "block-bum",
+    "bolt",
+    "curled",
+    "fat-rattle",
+    "freckled",
+    "hook",
+    "pixel",
+    "round-bum",
+    "sharp",
+    "skinny",
+    "small-rattle",
+    "bwc-bonhomme",
+    "bwc-flake",
+    "bwc-ice-skate",
+    "bwc-present",
+]
+snake_heads = [
+    "regular",
+    "beluga",
+    "bendr",
+    "dead",
+    "evil",
+    "fang",
+    "pixel",
+    "safe",
+    "sand-worm",
+    "shades",
+    "silly",
+    "smile",
+    "tongue",
+    "bwc-bonhomme",
+    "bwc-earmuffs",
+    "bwc-rudolph",
+    "bwc-scarf",
+    "bwc-ski",
+    "bwc-snow-worm",
+    "bwc-snowman",
+]
 
 
 def ping_response():
@@ -13,7 +55,11 @@ def start_response(color):
         status=200,
         headers={"Content-Type": "application/json"},
         body=json.dumps(
-            {"color": color, "headType": "bwc-bonhomme", "tailType": "bwc-bonhomme"}
+            {
+                "color": color,
+                "headType": random.choice(snake_heads),
+                "tailType": random.choice(snake_butts),
+            }
         ),
     )
 
